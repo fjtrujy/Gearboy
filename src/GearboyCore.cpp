@@ -236,7 +236,7 @@ void GearboyCore::ResetROMPreservingRAM(bool forceDMG)
         using namespace std;
         stringstream stream;
 
-        m_pMemory->GetCurrentRule()->SaveRam(stream);
+        m_pMemoryRule->SaveRam(stream);
 
         ResetROM(forceDMG);
 
@@ -244,7 +244,7 @@ void GearboyCore::ResetROMPreservingRAM(bool forceDMG)
         s32 size = (s32)stream.tellg();
         stream.seekg(0, stream.beg);
 
-        m_pMemory->GetCurrentRule()->LoadRam(stream, size);
+        m_pMemoryRule->LoadRam(stream, size);
     }
 }
 
@@ -278,7 +278,7 @@ void GearboyCore::SaveRam()
 
 void GearboyCore::SaveRam(const char* szPath)
 {
-    if (m_pCartridge->IsLoadedROM() && m_pCartridge->HasBattery() && IsValidPointer(m_pMemory->GetCurrentRule()))
+    if (m_pCartridge->IsLoadedROM() && m_pCartridge->HasBattery() && IsValidPointer(m_pMemoryRule))
     {
         Log("Saving RAM...");
 
@@ -307,7 +307,7 @@ void GearboyCore::SaveRam(const char* szPath)
 
         ofstream file(path.c_str(), ios::out | ios::binary);
 
-        m_pMemory->GetCurrentRule()->SaveRam(file);
+        m_pMemoryRule->SaveRam(file);
 
         Log("RAM saved");
     }
@@ -320,7 +320,7 @@ void GearboyCore::LoadRam()
 
 void GearboyCore::LoadRam(const char* szPath)
 {
-    if (m_pCartridge->IsLoadedROM() && m_pCartridge->HasBattery() && IsValidPointer(m_pMemory->GetCurrentRule()))
+    if (m_pCartridge->IsLoadedROM() && m_pCartridge->HasBattery() && IsValidPointer(m_pMemoryRule))
     {
         Log("Loading RAM...");
 
@@ -369,7 +369,7 @@ void GearboyCore::LoadRam(const char* szPath)
             s32 fileSize = (s32)file.tellg();
             file.seekg(0, file.beg);
 
-            if (m_pMemory->GetCurrentRule()->LoadRam(file, fileSize))
+            if (m_pMemoryRule->LoadRam(file, fileSize))
             {
                 Log("RAM loaded");
             }
@@ -437,7 +437,7 @@ bool GearboyCore::SaveState(u8* buffer, size_t& size)
 {
     bool ret = false;
 
-    if (m_pCartridge->IsLoadedROM() && IsValidPointer(m_pMemory->GetCurrentRule()))
+    if (m_pCartridge->IsLoadedROM() && IsValidPointer(m_pMemoryRule))
     {
         using namespace std;
 
@@ -463,7 +463,7 @@ bool GearboyCore::SaveState(u8* buffer, size_t& size)
 
 bool GearboyCore::SaveState(std::ostream& stream, size_t& size)
 {
-    if (m_pCartridge->IsLoadedROM() && IsValidPointer(m_pMemory->GetCurrentRule()))
+    if (m_pCartridge->IsLoadedROM() && IsValidPointer(m_pMemoryRule))
     {
         Log("Gathering save state data...");
 
@@ -474,7 +474,7 @@ bool GearboyCore::SaveState(std::ostream& stream, size_t& size)
         m_pVideo->SaveState(stream);
         m_pInput->SaveState(stream);
         m_pAudio->SaveState(stream);
-        m_pMemory->GetCurrentRule()->SaveState(stream);
+        m_pMemoryRule->SaveState(stream);
 
         size = static_cast<size_t>(stream.tellp());
 
@@ -552,7 +552,7 @@ void GearboyCore::LoadState(const char* szPath, int index)
 
 bool GearboyCore::LoadState(const u8* buffer, size_t size)
 {
-    if (m_pCartridge->IsLoadedROM() && IsValidPointer(m_pMemory->GetCurrentRule()) && (size > 0) && IsValidPointer(buffer))
+    if (m_pCartridge->IsLoadedROM() && IsValidPointer(m_pMemoryRule) && (size > 0) && IsValidPointer(buffer))
     {
         Log("Gathering load state data [%d bytes]...", size);
 
@@ -572,7 +572,7 @@ bool GearboyCore::LoadState(const u8* buffer, size_t size)
 
 bool GearboyCore::LoadState(std::istream& stream)
 {
-    if (m_pCartridge->IsLoadedROM() && IsValidPointer(m_pMemory->GetCurrentRule()))
+    if (m_pCartridge->IsLoadedROM() && IsValidPointer(m_pMemoryRule))
     {
         using namespace std;
 
@@ -601,7 +601,7 @@ bool GearboyCore::LoadState(std::istream& stream)
             m_pVideo->LoadState(stream);
             m_pInput->LoadState(stream);
             m_pAudio->LoadState(stream);
-            m_pMemory->GetCurrentRule()->LoadState(stream);
+            m_pMemoryRule->LoadState(stream);
 
             return true;
         }
@@ -702,7 +702,7 @@ bool GearboyCore::AddMemoryRules()
 
     if (!notSupported)
     {
-        m_pMemory->GetCurrentRule()->SetRamChangedCallback(m_pRamChangedCallback);
+        m_pMemoryRule->SetRamChangedCallback(m_pRamChangedCallback);
     }
 
     return !notSupported;

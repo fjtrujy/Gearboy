@@ -41,7 +41,6 @@ public:
     void SetCurrentRule(MemoryRule* pRule);
     void SetCommonRule(CommonMemoryRule* pRule);
     void SetIORule(IORegistersMemoryRule* pRule);
-    MemoryRule* GetCurrentRule();
     u8* GetMemoryMap();
     u8 Read(u16 address);
     void Write(u16 address, u8 value);

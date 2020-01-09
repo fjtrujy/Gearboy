@@ -183,11 +183,6 @@ void Memory::SetIORule(IORegistersMemoryRule* pRule)
     m_pIORegistersMemoryRule = pRule;
 }
 
-MemoryRule* Memory::GetCurrentRule()
-{
-    return m_pCurrentMemoryRule;
-}
-
 u8* Memory::GetMemoryMap()
 {
     return m_pMap;

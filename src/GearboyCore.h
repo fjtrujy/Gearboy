@@ -69,6 +69,7 @@ public:
     bool IsCGB();
     Memory* GetMemory();
     Cartridge* GetCartridge();
+    MemoryRule* m_pMemoryRule;
 
 private:
     void InitDMGPalette();
@@ -85,7 +86,6 @@ private:
     Cartridge* m_pCartridge;
     CommonMemoryRule* m_pCommonMemoryRule;
     IORegistersMemoryRule* m_pIORegistersMemoryRule;
-    MemoryRule* m_pMemoryRule;
     bool m_bCGB;
     bool m_bPaused;
     GB_Color m_DMGPalette[4];
