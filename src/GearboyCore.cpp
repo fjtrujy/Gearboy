@@ -27,12 +27,6 @@
 #include "MemoryRule.h"
 #include "CommonMemoryRule.h"
 #include "IORegistersMemoryRule.h"
-#include "RomOnlyMemoryRule.h"
-#include "MBC1MemoryRule.h"
-#include "MBC2MemoryRule.h"
-#include "MBC3MemoryRule.h"
-#include "MBC5MemoryRule.h"
-#include "MultiMBC1MemoryRule.h"
 
 GearboyCore::GearboyCore()
 {
@@ -44,12 +38,7 @@ GearboyCore::GearboyCore()
     InitPointer(m_pCartridge);
     InitPointer(m_pCommonMemoryRule);
     InitPointer(m_pIORegistersMemoryRule);
-    InitPointer(m_pRomOnlyMemoryRule);
-    InitPointer(m_pMBC1MemoryRule);
-    InitPointer(m_pMultiMBC1MemoryRule);
-    InitPointer(m_pMBC2MemoryRule);
-    InitPointer(m_pMBC3MemoryRule);
-    InitPointer(m_pMBC5MemoryRule);
+    InitPointer(m_pMemoryRule);
     InitPointer(m_pRamChangedCallback);
     m_bCGB = false;
     m_bPaused = true;
@@ -77,12 +66,7 @@ GearboyCore::~GearboyCore()
     }
 #endif
 
-    SafeDelete(m_pMBC5MemoryRule);
-    SafeDelete(m_pMBC3MemoryRule);
-    SafeDelete(m_pMBC2MemoryRule);
-    SafeDelete(m_pMultiMBC1MemoryRule);
-    SafeDelete(m_pMBC1MemoryRule);
-    SafeDelete(m_pRomOnlyMemoryRule);
+    SafeDelete(m_pMemoryRule);
     SafeDelete(m_pIORegistersMemoryRule);
     SafeDelete(m_pCommonMemoryRule);
     SafeDelete(m_pCartridge);
@@ -694,22 +678,7 @@ void GearboyCore::InitMemoryRules()
 
     m_pCommonMemoryRule = new CommonMemoryRule(m_pMemory);
 
-    m_pRomOnlyMemoryRule = new RomOnlyMemoryRule(m_pProcessor, m_pMemory,
-            m_pVideo, m_pInput, m_pCartridge, m_pAudio);
-
-    m_pMBC1MemoryRule = new MBC1MemoryRule(m_pProcessor, m_pMemory,
-            m_pVideo, m_pInput, m_pCartridge, m_pAudio);
-
-    m_pMultiMBC1MemoryRule = new MultiMBC1MemoryRule(m_pProcessor, m_pMemory,
-            m_pVideo, m_pInput, m_pCartridge, m_pAudio);
-
-    m_pMBC2MemoryRule = new MBC2MemoryRule(m_pProcessor, m_pMemory,
-            m_pVideo, m_pInput, m_pCartridge, m_pAudio);
-
-    m_pMBC3MemoryRule = new MBC3MemoryRule(m_pProcessor, m_pMemory,
-            m_pVideo, m_pInput, m_pCartridge, m_pAudio);
-
-    m_pMBC5MemoryRule = new MBC5MemoryRule(m_pProcessor, m_pMemory,
+    m_pMemoryRule = new MemoryRule(m_pProcessor, m_pMemory,
             m_pVideo, m_pInput, m_pCartridge, m_pAudio);
 }
 
@@ -724,26 +693,8 @@ bool GearboyCore::AddMemoryRules()
 
     switch (type)
     {
-        case Cartridge::CartridgeNoMBC:
-            m_pMemory->SetCurrentRule(m_pRomOnlyMemoryRule);
-            break;
         case Cartridge::CartridgeMBC1:
-            m_pMemory->SetCurrentRule(m_pMBC1MemoryRule);
-            break;
-        case Cartridge::CartridgeMBC1Multi:
-            m_pMemory->SetCurrentRule(m_pMultiMBC1MemoryRule);
-            break;
-        case Cartridge::CartridgeMBC2:
-            m_pMemory->SetCurrentRule(m_pMBC2MemoryRule);
-            break;
-        case Cartridge::CartridgeMBC3:
-            m_pMemory->SetCurrentRule(m_pMBC3MemoryRule);
-            break;
-        case Cartridge::CartridgeMBC5:
-            m_pMemory->SetCurrentRule(m_pMBC5MemoryRule);
-            break;
-        case Cartridge::CartridgeNotSupported:
-            notSupported = true;
+            m_pMemory->SetCurrentRule(m_pMemoryRule);
             break;
         default:
             notSupported = true;
@@ -779,12 +730,7 @@ void GearboyCore::Reset(bool bCGB)
     m_iRTCUpdateCount = 0;
 
     m_pCommonMemoryRule->Reset(m_bCGB);
-    m_pRomOnlyMemoryRule->Reset(m_bCGB);
-    m_pMBC1MemoryRule->Reset(m_bCGB);
-    m_pMultiMBC1MemoryRule->Reset(m_bCGB);
-    m_pMBC2MemoryRule->Reset(m_bCGB);
-    m_pMBC3MemoryRule->Reset(m_bCGB);
-    m_pMBC5MemoryRule->Reset(m_bCGB);
+    m_pMemoryRule->Reset(m_bCGB);
     m_pIORegistersMemoryRule->Reset(m_bCGB);
 
     m_bPaused = false;

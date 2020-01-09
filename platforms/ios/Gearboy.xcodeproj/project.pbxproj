@@ -38,17 +38,11 @@
 		6693950219E07B60003FB4F4 /* GearboyCore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 669394DE19E07B60003FB4F4 /* GearboyCore.cpp */; };
 		6693950319E07B60003FB4F4 /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 669394E019E07B60003FB4F4 /* Input.cpp */; };
 		6693950419E07B60003FB4F4 /* IORegistersMemoryRule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 669394E219E07B60003FB4F4 /* IORegistersMemoryRule.cpp */; };
-		6693950519E07B60003FB4F4 /* MBC1MemoryRule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 669394E419E07B60003FB4F4 /* MBC1MemoryRule.cpp */; };
-		6693950619E07B60003FB4F4 /* MBC2MemoryRule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 669394E619E07B60003FB4F4 /* MBC2MemoryRule.cpp */; };
-		6693950719E07B60003FB4F4 /* MBC3MemoryRule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 669394E819E07B60003FB4F4 /* MBC3MemoryRule.cpp */; };
-		6693950819E07B60003FB4F4 /* MBC5MemoryRule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 669394EA19E07B60003FB4F4 /* MBC5MemoryRule.cpp */; };
 		6693950919E07B60003FB4F4 /* Memory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 669394ED19E07B60003FB4F4 /* Memory.cpp */; };
-		6693950A19E07B60003FB4F4 /* MemoryRule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 669394EF19E07B60003FB4F4 /* MemoryRule.cpp */; };
-		6693950B19E07B60003FB4F4 /* MultiMBC1MemoryRule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 669394F119E07B60003FB4F4 /* MultiMBC1MemoryRule.cpp */; };
+		6693950B19E07B60003FB4F4 /* MemoryRule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 669394F119E07B60003FB4F4 /* MemoryRule.cpp */; };
 		6693950C19E07B60003FB4F4 /* opcodes_cb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 669394F519E07B60003FB4F4 /* opcodes_cb.cpp */; };
 		6693950D19E07B60003FB4F4 /* opcodes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 669394F619E07B60003FB4F4 /* opcodes.cpp */; };
 		6693950E19E07B60003FB4F4 /* Processor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 669394F819E07B60003FB4F4 /* Processor.cpp */; };
-		6693950F19E07B60003FB4F4 /* RomOnlyMemoryRule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 669394FA19E07B60003FB4F4 /* RomOnlyMemoryRule.cpp */; };
 		6693951019E07B60003FB4F4 /* Video.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 669394FD19E07B60003FB4F4 /* Video.cpp */; };
 		6693951F19E07CE9003FB4F4 /* Emulator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6693951219E07CE9003FB4F4 /* Emulator.mm */; };
 		6693952019E07CE9003FB4F4 /* EmulatorInput.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6693951419E07CE9003FB4F4 /* EmulatorInput.mm */; };
@@ -131,21 +125,11 @@
 		669394E119E07B60003FB4F4 /* Input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Input.h; path = ../../src/Input.h; sourceTree = "<group>"; };
 		669394E219E07B60003FB4F4 /* IORegistersMemoryRule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IORegistersMemoryRule.cpp; path = ../../src/IORegistersMemoryRule.cpp; sourceTree = "<group>"; };
 		669394E319E07B60003FB4F4 /* IORegistersMemoryRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IORegistersMemoryRule.h; path = ../../src/IORegistersMemoryRule.h; sourceTree = "<group>"; };
-		669394E419E07B60003FB4F4 /* MBC1MemoryRule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MBC1MemoryRule.cpp; path = ../../src/MBC1MemoryRule.cpp; sourceTree = "<group>"; };
-		669394E519E07B60003FB4F4 /* MBC1MemoryRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBC1MemoryRule.h; path = ../../src/MBC1MemoryRule.h; sourceTree = "<group>"; };
-		669394E619E07B60003FB4F4 /* MBC2MemoryRule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MBC2MemoryRule.cpp; path = ../../src/MBC2MemoryRule.cpp; sourceTree = "<group>"; };
-		669394E719E07B60003FB4F4 /* MBC2MemoryRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBC2MemoryRule.h; path = ../../src/MBC2MemoryRule.h; sourceTree = "<group>"; };
-		669394E819E07B60003FB4F4 /* MBC3MemoryRule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MBC3MemoryRule.cpp; path = ../../src/MBC3MemoryRule.cpp; sourceTree = "<group>"; };
-		669394E919E07B60003FB4F4 /* MBC3MemoryRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBC3MemoryRule.h; path = ../../src/MBC3MemoryRule.h; sourceTree = "<group>"; };
-		669394EA19E07B60003FB4F4 /* MBC5MemoryRule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MBC5MemoryRule.cpp; path = ../../src/MBC5MemoryRule.cpp; sourceTree = "<group>"; };
-		669394EB19E07B60003FB4F4 /* MBC5MemoryRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBC5MemoryRule.h; path = ../../src/MBC5MemoryRule.h; sourceTree = "<group>"; };
 		669394EC19E07B60003FB4F4 /* Memory_inline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Memory_inline.h; path = ../../src/Memory_inline.h; sourceTree = "<group>"; };
 		669394ED19E07B60003FB4F4 /* Memory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Memory.cpp; path = ../../src/Memory.cpp; sourceTree = "<group>"; };
 		669394EE19E07B60003FB4F4 /* Memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Memory.h; path = ../../src/Memory.h; sourceTree = "<group>"; };
-		669394EF19E07B60003FB4F4 /* MemoryRule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MemoryRule.cpp; path = ../../src/MemoryRule.cpp; sourceTree = "<group>"; };
-		669394F019E07B60003FB4F4 /* MemoryRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MemoryRule.h; path = ../../src/MemoryRule.h; sourceTree = "<group>"; };
-		669394F119E07B60003FB4F4 /* MultiMBC1MemoryRule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MultiMBC1MemoryRule.cpp; path = ../../src/MultiMBC1MemoryRule.cpp; sourceTree = "<group>"; };
-		669394F219E07B60003FB4F4 /* MultiMBC1MemoryRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultiMBC1MemoryRule.h; path = ../../src/MultiMBC1MemoryRule.h; sourceTree = "<group>"; };
+		669394F119E07B60003FB4F4 /* MemoryRule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MemoryRule.cpp; path = ../../src/MemoryRule.cpp; sourceTree = "<group>"; };
+		669394F219E07B60003FB4F4 /* MemoryRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MemoryRule.h; path = ../../src/MemoryRule.h; sourceTree = "<group>"; };
 		669394F319E07B60003FB4F4 /* opcode_names.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = opcode_names.h; path = ../../src/opcode_names.h; sourceTree = "<group>"; };
 		669394F419E07B60003FB4F4 /* opcode_timing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = opcode_timing.h; path = ../../src/opcode_timing.h; sourceTree = "<group>"; };
 		669394F519E07B60003FB4F4 /* opcodes_cb.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = opcodes_cb.cpp; path = ../../src/opcodes_cb.cpp; sourceTree = "<group>"; };
@@ -153,8 +137,6 @@
 		669394F719E07B60003FB4F4 /* Processor_inline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Processor_inline.h; path = ../../src/Processor_inline.h; sourceTree = "<group>"; };
 		669394F819E07B60003FB4F4 /* Processor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Processor.cpp; path = ../../src/Processor.cpp; sourceTree = "<group>"; };
 		669394F919E07B60003FB4F4 /* Processor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Processor.h; path = ../../src/Processor.h; sourceTree = "<group>"; };
-		669394FA19E07B60003FB4F4 /* RomOnlyMemoryRule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RomOnlyMemoryRule.cpp; path = ../../src/RomOnlyMemoryRule.cpp; sourceTree = "<group>"; };
-		669394FB19E07B60003FB4F4 /* RomOnlyMemoryRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RomOnlyMemoryRule.h; path = ../../src/RomOnlyMemoryRule.h; sourceTree = "<group>"; };
 		669394FC19E07B60003FB4F4 /* SixteenBitRegister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SixteenBitRegister.h; path = ../../src/SixteenBitRegister.h; sourceTree = "<group>"; };
 		669394FD19E07B60003FB4F4 /* Video.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Video.cpp; path = ../../src/Video.cpp; sourceTree = "<group>"; };
 		669394FE19E07B60003FB4F4 /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Video.h; path = ../../src/Video.h; sourceTree = "<group>"; };
@@ -320,21 +302,11 @@
 				669394E119E07B60003FB4F4 /* Input.h */,
 				669394E219E07B60003FB4F4 /* IORegistersMemoryRule.cpp */,
 				669394E319E07B60003FB4F4 /* IORegistersMemoryRule.h */,
-				669394E419E07B60003FB4F4 /* MBC1MemoryRule.cpp */,
-				669394E519E07B60003FB4F4 /* MBC1MemoryRule.h */,
-				669394E619E07B60003FB4F4 /* MBC2MemoryRule.cpp */,
-				669394E719E07B60003FB4F4 /* MBC2MemoryRule.h */,
-				669394E819E07B60003FB4F4 /* MBC3MemoryRule.cpp */,
-				669394E919E07B60003FB4F4 /* MBC3MemoryRule.h */,
-				669394EA19E07B60003FB4F4 /* MBC5MemoryRule.cpp */,
-				669394EB19E07B60003FB4F4 /* MBC5MemoryRule.h */,
 				669394EC19E07B60003FB4F4 /* Memory_inline.h */,
 				669394ED19E07B60003FB4F4 /* Memory.cpp */,
 				669394EE19E07B60003FB4F4 /* Memory.h */,
-				669394EF19E07B60003FB4F4 /* MemoryRule.cpp */,
-				669394F019E07B60003FB4F4 /* MemoryRule.h */,
-				669394F119E07B60003FB4F4 /* MultiMBC1MemoryRule.cpp */,
-				669394F219E07B60003FB4F4 /* MultiMBC1MemoryRule.h */,
+				669394F119E07B60003FB4F4 /* MemoryRule.cpp */,
+				669394F219E07B60003FB4F4 /* MemoryRule.h */,
 				669394F319E07B60003FB4F4 /* opcode_names.h */,
 				669394F419E07B60003FB4F4 /* opcode_timing.h */,
 				669394F519E07B60003FB4F4 /* opcodes_cb.cpp */,
@@ -342,8 +314,6 @@
 				669394F719E07B60003FB4F4 /* Processor_inline.h */,
 				669394F819E07B60003FB4F4 /* Processor.cpp */,
 				669394F919E07B60003FB4F4 /* Processor.h */,
-				669394FA19E07B60003FB4F4 /* RomOnlyMemoryRule.cpp */,
-				669394FB19E07B60003FB4F4 /* RomOnlyMemoryRule.h */,
 				669394FC19E07B60003FB4F4 /* SixteenBitRegister.h */,
 				669394FD19E07B60003FB4F4 /* Video.cpp */,
 				669394FE19E07B60003FB4F4 /* Video.h */,
@@ -487,12 +457,8 @@
 			files = (
 				663FB7FF2248084B00113707 /* Gb_Oscs.cpp in Sources */,
 				669394CE19E07B47003FB4F4 /* Effects_Buffer.cpp in Sources */,
-				6693950A19E07B60003FB4F4 /* MemoryRule.cpp in Sources */,
-				6693950719E07B60003FB4F4 /* MBC3MemoryRule.cpp in Sources */,
 				669394D019E07B47003FB4F4 /* Gb_Apu.cpp in Sources */,
-				6693950819E07B60003FB4F4 /* MBC5MemoryRule.cpp in Sources */,
-				6693950F19E07B60003FB4F4 /* RomOnlyMemoryRule.cpp in Sources */,
-				6693950B19E07B60003FB4F4 /* MultiMBC1MemoryRule.cpp in Sources */,
+				6693950B19E07B60003FB4F4 /* MemoryRule.cpp in Sources */,
 				6693950E19E07B60003FB4F4 /* Processor.cpp in Sources */,
 				6648A60519E078C4005A0B40 /* AppDelegate.mm in Sources */,
 				664653E81FEFE98F00053EBB /* Sound_Queue.cpp in Sources */,
@@ -510,11 +476,9 @@
 				6693950119E07B60003FB4F4 /* CommonMemoryRule.cpp in Sources */,
 				6693950319E07B60003FB4F4 /* Input.cpp in Sources */,
 				669394FF19E07B60003FB4F4 /* Audio.cpp in Sources */,
-				6693950519E07B60003FB4F4 /* MBC1MemoryRule.cpp in Sources */,
 				669394D219E07B47003FB4F4 /* Multi_Buffer.cpp in Sources */,
 				6648A60219E078C4005A0B40 /* main.m in Sources */,
 				6648A60B19E078C4005A0B40 /* DetailViewController.mm in Sources */,
-				6693950619E07B60003FB4F4 /* MBC2MemoryRule.cpp in Sources */,
 				6693950919E07B60003FB4F4 /* Memory.cpp in Sources */,
 				6693950C19E07B60003FB4F4 /* opcodes_cb.cpp in Sources */,
 				6693952319E07CE9003FB4F4 /* timer.mm in Sources */,

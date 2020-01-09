@@ -30,12 +30,6 @@ class Input;
 class Cartridge;
 class CommonMemoryRule;
 class IORegistersMemoryRule;
-class RomOnlyMemoryRule;
-class MBC1MemoryRule;
-class MBC2MemoryRule;
-class MBC3MemoryRule;
-class MBC5MemoryRule;
-class MultiMBC1MemoryRule;
 class MemoryRule;
 
 class GearboyCore
@@ -91,12 +85,7 @@ private:
     Cartridge* m_pCartridge;
     CommonMemoryRule* m_pCommonMemoryRule;
     IORegistersMemoryRule* m_pIORegistersMemoryRule;
-    RomOnlyMemoryRule* m_pRomOnlyMemoryRule;
-    MBC1MemoryRule* m_pMBC1MemoryRule;
-    MBC2MemoryRule* m_pMBC2MemoryRule;
-    MBC3MemoryRule* m_pMBC3MemoryRule;
-    MBC5MemoryRule* m_pMBC5MemoryRule;
-    MultiMBC1MemoryRule* m_pMultiMBC1MemoryRule;
+    MemoryRule* m_pMemoryRule;
     bool m_bCGB;
     bool m_bPaused;
     GB_Color m_DMGPalette[4];
